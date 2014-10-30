@@ -1,18 +1,80 @@
 package com.afeilulu.indoorapp;
 
-import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ScrollView;
+
+import com.afeilulu.indoorapp.model.Stadium;
+import com.afeilulu.indoorapp.util.LogUtil;
+import com.afeilulu.indoorapp.widget.NotifyingScrollView;
+import com.androidquery.AQuery;
+import com.google.gson.Gson;
 
 
-public class StadiumActivity extends Activity {
+public class StadiumActivity extends ActionBarActivity {
+
+    private final static String TAG = LogUtil.makeLogTag(StadiumActivity.class);
+    private Drawable mActionBarBackgroundDrawable;
+    private AQuery aq;
+
+    private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
+        public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
+            int actionBarHeight;
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+                actionBarHeight = getSupportActionBar().getHeight();
+            else
+                actionBarHeight = getActionBar().getHeight();
+
+            final int headerHeight = findViewById(R.id.image_header).getHeight() - actionBarHeight;
+            final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
+            final int newAlpha = (int) (ratio * 255);
+            mActionBarBackgroundDrawable.setAlpha(newAlpha);
+        }
+    };
+
+    private Drawable.Callback mDrawableCallback = new Drawable.Callback() {
+        @Override
+        public void invalidateDrawable(Drawable who) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+                getSupportActionBar().setBackgroundDrawable(who);
+            else
+                getActionBar().setBackgroundDrawable(who);
+        }
+
+        @Override
+        public void scheduleDrawable(Drawable who, Runnable what, long when) {
+        }
+
+        @Override
+        public void unscheduleDrawable(Drawable who, Runnable what) {
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stadium);
 
+        mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background);
+        mActionBarBackgroundDrawable.setAlpha(0);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            mActionBarBackgroundDrawable.setCallback(mDrawableCallback);
+        }
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+            getSupportActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
+        else
+            getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
+
+        ((NotifyingScrollView) findViewById(R.id.scroll_view)).setOnScrollChangedListener(mOnScrollChangedListener);
+
+        aq = new AQuery(this);
+        Stadium stadium = new Gson().fromJson(getIntent().getStringExtra("stadium_json"),Stadium.class);
+        aq.id(R.id.image_header).image(stadium.getPicUrl(),true,true,0,0,null,AQuery.FADE_IN);
     }
 
 

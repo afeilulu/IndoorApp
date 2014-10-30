@@ -5,8 +5,7 @@
     <application
         android:name=".DemoApplication"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.TranslucentActionBar">
+        android:label="@string/app_name">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="40ZQNWUxcVvUM3j4KBc9Q7EH" />
@@ -23,12 +22,12 @@
             android:label="@string/demo_name_basemap"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
+        <!--<activity
             android:name=".FragmentTableActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_basemap"
             android:screenOrientation="portrait" >
-        </activity>
+        </activity>-->
         <activity
             android:name=".MapFragmentDemo"
             android:configChanges="orientation|keyboardHidden"
@@ -172,6 +171,7 @@
             android:name=".StadiumActivity"
             android:label="@string/title_activity_stadium"
             android:parentActivityName=".BaiduMapActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
