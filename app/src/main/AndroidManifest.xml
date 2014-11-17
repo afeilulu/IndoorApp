@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.afeilulu.indoorapp" >
+    package="com.chinaairdome.indoorapp" >
 
     <application
-        android:name=".DemoApplication"
+        android:name="com.chinaairdome.indoorapp.DemoApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name">
         <meta-data
@@ -11,13 +11,13 @@
             android:value="40ZQNWUxcVvUM3j4KBc9Q7EH" />
 
         <activity
-            android:name=".BMapApiDemoMain"
+            android:name="com.chinaairdome.indoorapp.BMapApiDemoMain"
             android:configChanges="orientation|keyboardHidden"
             android:label="BaiduMapSDKDemo"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".BaseMapDemo"
+            android:name="com.chinaairdome.indoorapp.BaseMapDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_basemap"
             android:screenOrientation="portrait" >
@@ -29,121 +29,121 @@
             android:screenOrientation="portrait" >
         </activity>-->
         <activity
-            android:name=".MapFragmentDemo"
+            android:name="com.chinaairdome.indoorapp.MapFragmentDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_map_fragment"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".MultiMapViewDemo"
+            android:name="com.chinaairdome.indoorapp.MultiMapViewDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_multimap"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".GeometryDemo"
+            android:name="com.chinaairdome.indoorapp.GeometryDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_geometry"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".LocationDemo"
+            android:name="com.chinaairdome.indoorapp.LocationDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_location"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".MapControlDemo"
+            android:name="com.chinaairdome.indoorapp.MapControlDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_control"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".UISettingDemo"
+            android:name="com.chinaairdome.indoorapp.UISettingDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_ui"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".LayersDemo"
+            android:name="com.chinaairdome.indoorapp.LayersDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_layers"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".OverlayDemo"
+            android:name="com.chinaairdome.indoorapp.OverlayDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_overlay"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".OfflineDemo"
+            android:name="com.chinaairdome.indoorapp.OfflineDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_offline"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".PoiSearchDemo"
+            android:name="com.chinaairdome.indoorapp.PoiSearchDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_poi"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".RoutePlanDemo"
+            android:name="com.chinaairdome.indoorapp.RoutePlanDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_route"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".GeoCoderDemo"
+            android:name="com.chinaairdome.indoorapp.GeoCoderDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_geocode"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".BusLineSearchDemo"
+            android:name="com.chinaairdome.indoorapp.BusLineSearchDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_bus"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".HeatMapDemo"
+            android:name="com.chinaairdome.indoorapp.HeatMapDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_heatmap"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ShareDemo"
+            android:name="com.chinaairdome.indoorapp.ShareDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_share"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ShareDemoActivity"
+            android:name="com.chinaairdome.indoorapp.ShareDemoActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_share"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".NaviDemo"
+            android:name="com.chinaairdome.indoorapp.NaviDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_navi"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".CloudSearchActivity"
+            android:name="com.chinaairdome.indoorapp.CloudSearchActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_cloud"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".CloudSearchDemo"
+            android:name="com.chinaairdome.indoorapp.CloudSearchDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_cloud_search_demo"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".OpenglDemo"
+            android:name="com.chinaairdome.indoorapp.OpenglDemo"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/demo_name_opengl"
             android:screenOrientation="portrait" >
@@ -156,7 +156,7 @@
         </service>
 
         <activity
-            android:name=".BaiduMapActivity"
+            android:name="com.chinaairdome.indoorapp.BaiduMapActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_baidu_map"
             android:screenOrientation="portrait"
@@ -168,14 +168,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StadiumActivity"
+            android:name="com.chinaairdome.indoorapp.StadiumActivity"
             android:label="@string/title_activity_stadium"
-            android:parentActivityName=".BaiduMapActivity"
+            android:parentActivityName="com.chinaairdome.indoorapp.BaiduMapActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.afeilulu.indoorapp.BaiduMapActivity" />
+                android:value="com.chinaairdome.indoorapp.BaiduMapActivity" />
         </activity>
     </application>
 
