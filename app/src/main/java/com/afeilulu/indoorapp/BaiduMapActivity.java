@@ -67,6 +67,9 @@ public class BaiduMapActivity extends ActionBarActivity implements
     MapView mMapView;
     BaiduMap mBaiduMap;
 
+
+
+
     // UI相关
     Button requestLocButton;
     boolean isFirstLoc = true;// 是否首次定位
