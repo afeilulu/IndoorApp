@@ -282,8 +282,8 @@ public class BaiduMapActivity extends ActionBarActivity implements
 
         if (!isStadiumInfoGot) {
             mBaiduMap.clear();
-            String url = Config.getStadiumListUrl(result.getAddressDetail().city);
-//            String url = Config.getStadiumAllUrl();
+//            String url = Config.getStadiumListUrl(result.getAddressDetail().city);
+            String url = Config.getStadiumAllUrl();
             aq.ajax(url, JSONArray.class, BaiduMapActivity.this, "getStadiumListCallBack");
         } else {
 
