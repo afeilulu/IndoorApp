@@ -1,23 +1,34 @@
 package com.chinaairdome.indoorapp;
 
+
+
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ScrollView;
 
 import com.androidquery.AQuery;
+import com.chinaairdome.indoorapp.fragment.DetailFragment;
 import com.chinaairdome.indoorapp.model.Stadium;
 import com.chinaairdome.indoorapp.util.LogUtil;
 import com.chinaairdome.indoorapp.widget.NotifyingScrollView;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 
 public class StadiumActivity extends ActionBarActivity {
 
     private final static String TAG = LogUtil.makeLogTag(StadiumActivity.class);
+    private ArrayList<Fragment> fragments;
+    private FragmentManager fm;
+    Stadium stadium;
     private Drawable mActionBarBackgroundDrawable;
     private AQuery aq;
 
@@ -58,7 +69,7 @@ public class StadiumActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stadium);
-
+        prepareFragment(savedInstanceState);
         mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background);
         mActionBarBackgroundDrawable.setAlpha(0);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -73,7 +84,7 @@ public class StadiumActivity extends ActionBarActivity {
         ((NotifyingScrollView) findViewById(R.id.scroll_view)).setOnScrollChangedListener(mOnScrollChangedListener);
 
         aq = new AQuery(this);
-        Stadium stadium = new Gson().fromJson(getIntent().getStringExtra("stadium_json"),Stadium.class);
+        stadium = new Gson().fromJson(getIntent().getStringExtra("stadium_json"),Stadium.class);
         aq.id(R.id.image_header).image(stadium.getPicUrl(),true,true,0,0,null,AQuery.FADE_IN);
     }
 
@@ -95,5 +106,14 @@ public class StadiumActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void prepareFragment(Bundle savedInstanceState) {
+        fragments = new ArrayList<Fragment>();
+        fragments.add(new DetailFragment());
+        fm = getSupportFragmentManager();
+        FragmentTransaction localFragmentTransaction = fm.beginTransaction();
+        localFragmentTransaction.replace(R.id.content, fragments.get(0));
+        localFragmentTransaction.addToBackStack(null);
+        localFragmentTransaction.commit();
     }
 }

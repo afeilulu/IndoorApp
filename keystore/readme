@@ -1,0 +1,9 @@
+adb shell am start -n com.chinaairdom.indoorapp/.StadiumActivity
+
+
+adb shell am start -n com.chinaairdome.indoorapp/.StadiumActivity -e stadium_json {"class":"com.chinaairdome.Stadium","id":1,"address":"陕西省西安市碑林区朱雀大街","city":"西安","dateCreated":"2014-11-23T05:24:47Z","lastUpdated":"2014-11-23T05:24:47Z","lat":108.945,"lng":34.21,"name":"陕西省体育场","phone":"133223","picUrl":"http://www.epiaogo.com/data/show/b22e0b3a-f578-459a-bb0f-37f1bf01ddda.jpg"}
+
+
+
+
+

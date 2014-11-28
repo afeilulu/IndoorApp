@@ -15,7 +15,11 @@
             android:minHeight="250dp"
             android:scaleType="centerCrop"
             android:background="@drawable/default_image" />
-
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="350dp" >
+        </FrameLayout>
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
